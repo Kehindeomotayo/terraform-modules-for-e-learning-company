@@ -1,5 +1,5 @@
 # export the s3 bucket name
-output "env_file_bucket_name" {
-  value = var.env_file_bucket_name
+output "s3_bucket" {
+  value = aws_s3_bucket.s3_bucket.id
 }
 
