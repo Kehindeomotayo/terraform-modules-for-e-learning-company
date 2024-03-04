@@ -1,3 +1,3 @@
 #s3 variables
 variable "project_name" {}
-variable "s3_bucket" {}
+variable "env_file_bucket_name" {}
