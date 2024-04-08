@@ -2,33 +2,33 @@ output "vpc_id" {
   value = aws_vpc.vpc.id
 }
 
-output "project_name" {
-  value = var.project_name
+output "vpc_cidr" {
+  value = aws_vpc.vpc.cidr_block
 }
 
-output "environment" {
-  value = var.environment
+output "public-subnets_id" {
+  value = aws_subnet.public-subnets[*]
 }
 
-output "public_subnet_az1_id" {
-  value = aws_subnet.public_subnet_az1.id
-}
-output "availability_zone_1" {
-  value = data.aws_availability_zones.availability_zones.names[0]
+
+
+output "private-subnets_id" {
+  value = aws_subnet.private-subnets[*]
 }
 
-output "availability_zone_2" {
-  value = data.aws_availability_zones.availability_zones.names[1]
-}
-output "private_subnet_az1_id" {
-  value = aws_subnet.private_subnet_az1.id
+
+output "security-group_id" {
+  value = aws_security_group.sg.id
 }
 
-output "private_subnet_az2_id" {
-  value = aws_subnet.private_subnet_az2.id
+output "lb-target-group_arn" {
+  value = aws_lb_target_group.lb-target-group.arn
 }
 
-output "internet_gateway" {
-  value = aws_internet_gateway.internet_gateway
+output "load-balancer_dns_name" {
+  value = aws_lb.load-balancer.dns_name
+}
 
+output "load-balancer_zone_id" {
+  value = aws_lb.load-balancer.zone_id
 }
