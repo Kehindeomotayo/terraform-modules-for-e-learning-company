@@ -1,7 +1,7 @@
 
 module "vpc" {
   source = "git@github.com:Kehindeomotayo/terraform-modules-for-e-learning-company.git//vpc"
- 
+
 
   #vpc atttributes
   project_name         = var.project_name
@@ -18,7 +18,7 @@ module "vpc" {
   map_public_ip_on_launch                     = var.map_public_ip_on_launch
   enable_resource_name_dns_a_record_on_launch = var.enable_resource_name_dns_a_record_on_launch
   instance_tenancy                            = var.instance_tenancy
-  
+
   associate_public_ip_address = var.associate_public_ip_address
   #dbsubnetgroup attributes
   name = var.name
@@ -31,15 +31,15 @@ module "vpc" {
   db_name               = var.db_name
   #username              = var.username
   #password              = var.password
-  parameter_group_name  = var.parameter_group_name
-  skip_final_snapshot   = var.skip_final_snapshot
-  db_subnet_group_name  = var.db_subnet_group_name
+  parameter_group_name = var.parameter_group_name
+  skip_final_snapshot  = var.skip_final_snapshot
+  db_subnet_group_name = var.db_subnet_group_name
   #ECR Attributes
-  repository_name       = var.repository_name 
-  image_tag             = var.image_tag 
+  repository_name = var.repository_name
+  image_tag       = var.image_tag
   #Route53 Attributes
   root_domain_name = var.root_domain_name
-  sub_domain_name = var.sub_domain_name
+  sub_domain_name  = var.sub_domain_name
 }
 
 module "key-pair" {

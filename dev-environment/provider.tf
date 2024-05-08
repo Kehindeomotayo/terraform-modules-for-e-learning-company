@@ -1,12 +1,12 @@
 #0. Configure The Provider
 terraform {
-  
+
   required_providers {
     aws = {
       source = "hashicorp/aws"
       #version = "4.64.0"
     }
-  
+
 
     postgresql = { # This line is what needs to change.
       source = "cyrilgdn/postgresql"
@@ -23,9 +23,9 @@ provider "aws" {
 
 
 provider "postgresql" {
-  scheme          = "awspostgres"
-  host            = "test"
-  port            = 5432
+  scheme = "awspostgres"
+  host   = "test"
+  port   = 5432
   #name           = var.db_name
   username        = var.username
   password        = var.password
